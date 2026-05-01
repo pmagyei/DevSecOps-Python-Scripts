@@ -1,0 +1,6 @@
+snacks = ['PLantain chips', 'Pistachio Nuts', 'Noodles']
+
+message = "I want to eat"
+print(f"{message} {snacks[0].title()}")
+print(f"{message} {snacks[1].title()}")
+print(f"{message} {snacks[2].title()}")
