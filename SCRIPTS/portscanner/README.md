@@ -1,0 +1,2 @@
+The port scanner prompts for a port number (integer only), usually if you type anything other than an integer, python will throw a ValueError, and the code will break.
+With the Try/Except, the program is able to handle the selected exception, in this case the ValueError, it then checks the statements between Try and Except, if an exception with the ValueError type occurs during the execution of the try clause, the clauue is skipped, if the type matches the exeption named after the except keyword, the exepct clause is executed.
