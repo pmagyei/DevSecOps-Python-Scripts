@@ -1,2 +1,0 @@
-The focus of this script is iterate through a dictionary using values ti look up data in a second dictionary; 
-The script uses a value from the first dictionary as the a key to second dictionary to find the corresponding value. The value is then assigned to the variable, if the variable contains 'critical' or 'high', the corresponding servers are appended to a list.
