@@ -13,7 +13,7 @@ role_permissions = {
     'intern': ['read']
 }
 
-for name, role in employees.items():
-    permission = role_permissions[role]
-    if 'delete' in permission:
+for name, role in employees.items(): # .items() expands the list's key and values, these are assigned to name and role variables
+    permission = role_permissions[role] # uses the value as a key to extract the value and assign it the variable
+    if 'delete' in permission: # if the string 'delete' appears in the list which is assigned to the variable, the following block of code that is indented will be executed
         print(f"ALERT: {name} has highly privileged DELETE access")

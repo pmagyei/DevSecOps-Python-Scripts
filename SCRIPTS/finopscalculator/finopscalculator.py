@@ -14,13 +14,13 @@ hourly_pricing = {
 
 total_hourly_cost = 0.0
 
-servers_running = []
-for ins_info in active_instances:
-    if ins_info['state'] == 'running':
+for ins_info in active_instances: #iterates through the list
+    if ins_info['state'] == 'running':  # extracts the value by using the 'state' key and compares it to the string 'running'
         #print(ins_info['type'])
+        # if the value of state == 'running', the value of type(key) is assigned to the server type variable
         server_type = ins_info['type']
 
-        total_hourly_cost += hourly_pricing[server_type]
+        total_hourly_cost += hourly_pricing[server_type]  # the server_type is used to access the corresponding cost and it is added cumulatively.
 print(total_hourly_cost)
 
 

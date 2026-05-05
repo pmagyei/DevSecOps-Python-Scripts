@@ -1,0 +1,2 @@
+The script grabs both key and value from the employee dictionary, bridges the two datasets by the using the value as a key to extract the value from the role_permission dictionary.
+The value is then assigned to the permission variable. If the string 'delete' appears in any of the assigned permissions of the employee, the employee is printed

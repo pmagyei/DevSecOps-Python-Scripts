@@ -12,6 +12,7 @@ os_threat_levels = {
 for server, details in server_inventory.items():  # details is a value to server_inventory. details is a dictionary
     # details.get() on it to find the 'os'(key)
     current_os = details.get("os", "Unknown")  #current os = Ubuntu_18/Windows_2012 #if OS key doesn't exist its replaced with unknown
+    # with standard brackets, if the key does not exist, the program will crash with a KeyError.
 
     # OS is used to get the threat level from os_threat_levels dictionary
     threat = os_threat_levels.get(current_os, "No Data")
