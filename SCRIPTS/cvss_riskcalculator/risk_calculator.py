@@ -4,7 +4,7 @@ scan_results = [
     {'cve': 'CVE-2024-0003', 'base_score': 9.8, 'exploit_score': 3.9}
 ]
 
-# functions need to act as dumb machines
+# the function only needs two values, carry out the calculation, and return the value.
 def calculate_risk(base, exploit): # parameters pass data in the function body
     vulnerability_risk = (base * exploit / 2) # multiplies the passed parameters
     return vulnerability_risk # returns value to the function call
