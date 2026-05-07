@@ -1,0 +1,19 @@
+Phase 1
+Define the purpose
+FUNCTION: what is it supposed to do
+INPUT: what feeds into the script
+OUTPUT: what output is the script supposed to generate
+RULES: Must not contain uppercase letters. Must be 3 to 63 characters long.
+
+Phase 2
+Build the blueprint
+Writing actual code in this phase is forbidden.
+Break the rules down into chronological steps using plain English. If a step feels too big, break it into two.
+
+Phase 3
+Translate into code
+Look at the comments in English, translate them into Python underneath them then move on.
+
+Phase 4
+Once the code works, delete  obvious comments to keep the file clean.
+leave the explanations so the next engineer knows why the code wa written
