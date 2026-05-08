@@ -1,0 +1,1 @@
+This folder contains isolated scripts written to master specific Python concepts from Python Crash Course. It focuses heavily on Data Structures, Functions, and Object-Oriented principles
