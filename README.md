@@ -25,10 +25,7 @@ What it does: Calculates how much the total running compute is costing each hour
 The Engineering: Extracts the server type by using a key, uses the type to look up the price and adds it the total
 
 6. (SCRIPTS/threatlistcombiner)
-7. What it does: Combines to sets of IP addresses and removes any duplicates
-The Engineering: Used both mutating(by extending the lissy) and non-mutating(by adding lists together and assigning them to a new value ) code to combine the lists. 
-
-
-
+What it does: Combines to sets of IP addresses and removes any duplicates
+The Engineering: Used both mutating(by extending the lissy) and non-mutating(by adding lists together and assigning them to a new value ) code to combine the lists.
 
 
