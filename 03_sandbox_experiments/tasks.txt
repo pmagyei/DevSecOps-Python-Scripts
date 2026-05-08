@@ -1,0 +1,3 @@
+Task 1: Complete Python course
+Task 2: Revise file handling
+Task 3: Practise file I/O

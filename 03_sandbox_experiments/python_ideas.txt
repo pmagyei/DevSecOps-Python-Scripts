@@ -1,0 +1,7 @@
+IDEAS
+
+Automate infrastructure
+
+Create a database using python and sql
+
+Automate everything
