@@ -10,14 +10,14 @@ class Car:
         self.odometer_reading = 0
 
     def get_descriptive_name(self): # method
-        """Return formatted descriptive name"""
+        """Return a formatted descriptive name"""
         long_name = f"{self.year} {self.make} {self.model}"
         return long_name.title()
 
     def update_odometer(self, mileage):  #updates attribute value through method
-        """Set odometer to given value.
+        """Set the odometer to a given value.
         Reject change if it attempts to roll the odometer back."""
-        if mileage >= self.odometer_reading:
+        if mileage >= self.odometer_reading: #
             self.odometer_reading = mileage
         else:
             print("odometer reading roll backs not allowed")
@@ -29,7 +29,7 @@ class Car:
 my_new_car = Car("audi", "a4", 2024) # instance from the class
 print(my_new_car.get_descriptive_name())
 
-#my_new_car.update_odometer(25) # updates the attribute though the method
+my_new_car.update_odometer(25) # updates the attribute though the method
 
 #my_new_car.odometer_reading = 23 # directly access the attributes
 my_new_car.read_odometer()
