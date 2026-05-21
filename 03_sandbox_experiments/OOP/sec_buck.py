@@ -26,6 +26,9 @@ SeBu = SecureBucket("logging_bucket", "eu-west-2a", "placeholder").deploy() #bui
 print(SeBu) # method returns a string
 # object has no variable holding on to it, object is deleted from RAM
 
+SeBu.bucket_name
+
+
 
 Sec_Buck = SecureBucket("files_bucket", "eu-west-2b", "placeholder") # instantiates object and assigns object to variable, SB holds the object
 print(Sec_Buck) # prints object (saved in RAM)
