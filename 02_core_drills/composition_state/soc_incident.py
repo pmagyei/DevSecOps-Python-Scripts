@@ -1,5 +1,5 @@
 class EvidenceLocker:
-    """Build and incident tracker"""
+    """Builds incident tracker"""
     def __init__(self):
         self.logs = []
 
