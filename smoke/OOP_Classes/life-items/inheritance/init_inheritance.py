@@ -31,9 +31,9 @@ class Car: # Parent Clas
 class Battery:
     """A simple attempt to model a battery for an electric car."""
 
-    def __init__(self, battery_size=40): #battery_size is an optional parameter
+    def __init__(self, bat_size): #battery_size is an optional parameter
         """initialize battery's attributes."""
-        self.battery_size = battery_size
+        self.battery_size = bat_size
 
     def describe_battery(self):
         """Print a statement describing the battery size"""
@@ -42,11 +42,21 @@ class Battery:
 
     def get_range(self):
         """Print a statement about the range this battery provides"""
-        if self.battery_size == 40:
-            range = 150
-        elif self.battery_size == 65:
-            range = 225
-        print(f"This car's range is {range}")
+
+        if self.battery_size < 40:
+            srange = 150
+        elif self.battery_size > 41:
+            srange = 175
+        elif self.battery_size > 65:
+            srange = 225
+        print(f"This car's range is about {srange}")
+
+    # def upgrade_batter(self):
+    #
+    #     if self.battery_size:
+    #         pass
+    #     else:
+    #         self.battery_size == 65
 
 class ElectricCar(Car): # Child class; Car class referenced in the ()
     """represents aspects of parent class, specific to child class"""
@@ -58,7 +68,7 @@ class ElectricCar(Car): # Child class; Car class referenced in the ()
         """
         super().__init__(make, model, year) #special function that allows to call method from parent class
         # gives child class all attributes from parent class
-        self.battery = Battery()  # calls the child class attribute points to the Battery __init__
+        self.battery = Battery(11)  # calls the child class attribute points to the Battery __init__
         #calls the Battery class
 
 
@@ -66,6 +76,9 @@ class ElectricCar(Car): # Child class; Car class referenced in the ()
 my_leaf = ElectricCar('nissan', 'leaf', 2024) # instantiation of the class ElectricCar
 print(my_leaf.get_descriptive_name())
 
-my_leaf.battery.describe_battery()
+my_syrus = ElectricCar('toyota', 'syrus', 2022)
+print(my_syrus.get_descriptive_name())
+
+
 #.battery = creates a new instance from the class battery
 my_leaf.battery.get_range()
