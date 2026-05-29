@@ -1,0 +1,7 @@
+SUCCESS: User 'admin' logged in from 192.168.1.50
+UNAUTHORIZED: Failed SSH attempt from 203.0.113.42
+SUCCESS: User 'dev_ops' accessed S3 bucket 'prod-data'
+UNAUTHORIZED: Failed IAM role assumption from 198.51.100.7
+SUCCESS: EC2 instance 'web-01' deployed
+UNAUTHORIZED: Failed SSH attempt from 203.0.113.42
+CRITICAL: Root password changed from unknown IP
