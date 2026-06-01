@@ -1,0 +1,9 @@
+In Python you can read from files
+In Python you can write to files
+In Python you can create objects and interact with them
+In Python you can assign items to variable
+In Python you can use loops to go iterate over a list or data
+In Python you can ask for a user input to interact with the program
+In Python you can use dictionaries to store key:value pairs
+In Python you can use lists to store any item
+In Python you can write scripts to automate your workflows
