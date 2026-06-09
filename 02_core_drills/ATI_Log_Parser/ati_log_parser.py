@@ -14,7 +14,6 @@
 from abc import ABC, abstractmethod # import abstract method to enforce child classes to have a method
 import re
 
-
 class FileReader:
     def __init__(self, log_file): # default file name, if file name or path changes, can be edited
         # when instantiating
@@ -65,8 +64,6 @@ class CloudtrailAnalyzer(RootLogAnalyser):
         for ip in ip_addresses:
             print(f"Executing firewall drop rule for {ip}:")
 
-
-
 audit_log_file = CloudtrailAnalyzer("audit_logs.txt")
 audit_log_file.analyze()
 
@@ -75,11 +72,8 @@ report = audit_log_file.get_report()
 
 audit_log_file.block_threats()
 
-
 #2nd sprint
 class VPCFlowAnalyzer(RootLogAnalyser):
 
     def analyze(self):
         pass
-
-
