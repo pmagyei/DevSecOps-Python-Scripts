@@ -42,16 +42,22 @@ class CloudtrailAnalyzer(RootLogAnalyser):
         self.__threat_list = []
         self.__threat_ip = []
 
+    @staticmethod # method is static, it does not access/edit or interact with the object's memory
+    def extract_ip(mock_line: str) -> list[str]:
+        ip_pattern = r'\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b'
+        extracted_ip = re.findall(ip_pattern, mock_line)
+        return extracted_ip
+
     def analyze(self):
 
-        ip_pattern = r'\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b'
         audit_file = self.file_handler.analyze_file() # file with a list of strings is returned
         for line in audit_file: # iterates over each line in the file
             if "UNAUTHORIZED" in line: # if UNAUTHORIZED is in the file, it appends it to the list
                 clean_line = line.strip() # removes the \n
                 self.__threat_list.append(clean_line)
 
-                extracted_ips =  re.findall(ip_pattern, clean_line) # regex to extract ip addresses
+                #extracted_ips = re.findall(ip_pattern, clean_line) #
+                extracted_ips = self.extract_ip(clean_line) # regex to extract ip addresses
                 for lines in extracted_ips:
                     self.__threat_ip.append(lines)
 
@@ -63,7 +69,6 @@ class CloudtrailAnalyzer(RootLogAnalyser):
         ip_addresses = self.__threat_ip
         for ip in ip_addresses:
             print(f"Executing firewall drop rule for {ip}:")
-
 
 
 audit_log_file = CloudtrailAnalyzer("audit_logs.txt")
@@ -80,5 +85,3 @@ class VPCFlowAnalyzer(RootLogAnalyser):
 
     def analyze(self):
         pass
-
-
