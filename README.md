@@ -5,7 +5,7 @@ This repository tracks my transition from manual cli commands to automation. It 
 ## 📂 Repository Structure
 
 - [01_capstone_projects](./01_capstone_projects): Scripts combining multiple concepts (API integration, automation, and security logic).
-- [02_core_drills](./02_core_drills): Deep-dives into Python fundamentals, including Functions, Data Structures, and OOP.
+- [02_core_drills](02_core_scripts): Deep-dives into Python fundamentals, including Functions, Data Structures, and OOP.
 - [03_sandbox_experiments](./03_sandbox_experiments): Tweaks and "smoke tests" exploring Python concepts outside the standard curriculum.
 
 ## 🛠️ Current Tech Stack & Focus
