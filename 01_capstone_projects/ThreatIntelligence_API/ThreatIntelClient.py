@@ -10,6 +10,8 @@
 import json
 import requests
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 
 class PathFile:
@@ -25,7 +27,10 @@ class ThreatIntelClient:
         self.__base_url = "https://ipapi.co/"
 
     def scan_ip(self, target_ip: str) -> dict:
-        target_url = f"{self.__base_url}{target_ip}/json/"
+        load_dotenv()
+        api_key = os.getenv("API_KEY")
+        target_url = f"{self.__base_url}{target_ip}/json/?key={api_key}"
+
         try:
             response = requests.get(target_url)  # sends a get request to the target url
             # print(f"HTTP Status: {response.status_code}")
@@ -44,8 +49,11 @@ class SaveFile:
     def save_to_file(api_resp: dict, output_path) -> dict:
         # path_file = PathFile
         # output_path = path_file.path_to_file("")
+
         with output_path.open("a", encoding="utf-8") as output_file:
-            json.dump(api_resp, output_file, indent=4)  # json.dump serializes obj as a JSON format
+            # json.dump(api_resp, output_file, indent=4)  # json.dump serializes obj as a JSON format
+            flat_json_string = json.dumps(api_resp)
+            output_file.write(flat_json_string + "\n")
             return output_file
 
 # path2_file = PathFile #instantiate file path

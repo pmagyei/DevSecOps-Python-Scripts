@@ -14,7 +14,6 @@
 from abc import ABC, abstractmethod # import abstract method to enforce child classes to have a method
 import re
 from ThreatIntelClient import PathFile, ThreatIntelClient, SaveFile
-import time
 
 class FileReader:
     def __init__(self, log_file): # default file name, if file name or path changes, can be edited
@@ -72,19 +71,19 @@ class CloudtrailAnalyzer(RootLogAnalyser):
         ip_addresses = self.__threat_ip
         for ip in ip_addresses:
             path_file = PathFile
-            p_file = path_file.path_to_file("ips.json")
+            p_file = path_file.path_to_file("ips.jsonl")
             print(f"File: {p_file} has been saved")
             call_api = ThreatIntelClient()
             api_client_response: dict = call_api.scan_ip(ip)
             SaveFile.save_to_file(api_client_response, p_file)
-            if api_client_response.get("reserved"):
+            if api_client_response.get("org") == "Google LLC":
                 #print(api_client_response)
                 print(f"WHITELISTED: Internal/Reserved IP lockout prevented for {ip}")
             else:
                 print(f"Executing firewall drop rule for {ip}:")
-            time.sleep(2)
+            #time.sleep(2)
 
-audit_log_file = CloudtrailAnalyzer("audit_log.txt")
+audit_log_file = CloudtrailAnalyzer("audit_logs.txt")
 audit_log_file.analyze()
 
 report = audit_log_file.get_report()
