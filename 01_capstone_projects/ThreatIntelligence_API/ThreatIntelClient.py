@@ -51,7 +51,7 @@ class SaveFile:
 # path2_file = PathFile #instantiate file path
 # p_file = path2_file.path_to_file("google.json")
 # print(f"File:{p_file} has been saved")
-#
+
 # call_api = ThreatIntelClient()
 # api_client_response = call_api.scan_ip("8.8.8.8")
 # save_file = SaveFile.save_to_file(api_client_response, p_file)
